@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b962500b-c131-45b8-aedf-c192f07d2388" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.0.0.111/HRM_SERVICE/purchase.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Purchase.disco" MetadataType="Disco" ID="f299a683-fd76-4c32-bec4-c0411f11a20e" SourceId="1" SourceUrl="http://10.0.0.111/HRM_SERVICE/Purchase.svc?disco" />
+    <MetadataFile FileName="Purchase.xsd" MetadataType="Schema" ID="7b96a9b5-0920-4ecc-a5b8-da04abe4fa61" SourceId="1" SourceUrl="http://10.0.0.111/HRM_SERVICE/Purchase.svc?xsd=xsd2" />
+    <MetadataFile FileName="Purchase1.xsd" MetadataType="Schema" ID="3b6a7887-36c0-41a9-9a8c-ded9e756a950" SourceId="1" SourceUrl="http://10.0.0.111/HRM_SERVICE/Purchase.svc?xsd=xsd1" />
+    <MetadataFile FileName="Purchase.wsdl" MetadataType="Wsdl" ID="4eedd586-7352-48b4-a364-2fb317770a3f" SourceId="1" SourceUrl="http://10.0.0.111/HRM_SERVICE/Purchase.svc?wsdl" />
+    <MetadataFile FileName="Purchase2.xsd" MetadataType="Schema" ID="89143d15-18a8-4685-9d36-f343b644d424" SourceId="1" SourceUrl="http://10.0.0.111/HRM_SERVICE/Purchase.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

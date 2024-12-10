@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FraudOutstanding" targetNamespace="http://tempuri.org/FraudOutstanding.xsd" xmlns:mstns="http://tempuri.org/FraudOutstanding.xsd" xmlns="http://tempuri.org/FraudOutstanding.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FraudOutstanding" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FraudOutstanding" msprop:Generator_UserDSName="FraudOutstanding">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DATAS" msprop:Generator_TableClassName="DATASDataTable" msprop:Generator_TableVarName="tableDATAS" msprop:Generator_TablePropName="DATAS" msprop:Generator_RowDeletingName="DATASRowDeleting" msprop:Generator_RowChangingName="DATASRowChanging" msprop:Generator_RowEvHandlerName="DATASRowChangeEventHandler" msprop:Generator_RowDeletedName="DATASRowDeleted" msprop:Generator_UserTableName="DATAS" msprop:Generator_RowChangedName="DATASRowChanged" msprop:Generator_RowEvArgName="DATASRowChangeEvent" msprop:Generator_RowClassName="DATASRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="No_x0020_pq" msprop:Generator_ColumnVarNameInTable="columnNo_pq" msprop:Generator_ColumnPropNameInRow="No_pq" msprop:Generator_ColumnPropNameInTable="No_pqColumn" msprop:Generator_UserColumnName="No pq" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount_x0020_pq" msprop:Generator_ColumnVarNameInTable="columnAmount_pq" msprop:Generator_ColumnPropNameInRow="Amount_pq" msprop:Generator_ColumnPropNameInTable="Amount_pqColumn" msprop:Generator_UserColumnName="Amount pq" type="xs:string" minOccurs="0" />
+              <xs:element name="No_x0020_cq" msprop:Generator_ColumnVarNameInTable="columnNo_cq" msprop:Generator_ColumnPropNameInRow="No_cq" msprop:Generator_ColumnPropNameInTable="No_cqColumn" msprop:Generator_UserColumnName="No cq" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount_x0020_cq" msprop:Generator_ColumnVarNameInTable="columnAmount_cq" msprop:Generator_ColumnPropNameInRow="Amount_cq" msprop:Generator_ColumnPropNameInTable="Amount_cqColumn" msprop:Generator_UserColumnName="Amount cq" type="xs:string" minOccurs="0" />
+              <xs:element name="No_x0020_cls" msprop:Generator_ColumnVarNameInTable="columnNo_cls" msprop:Generator_ColumnPropNameInRow="No_cls" msprop:Generator_ColumnPropNameInTable="No_clsColumn" msprop:Generator_UserColumnName="No cls" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount_x0020_cls" msprop:Generator_ColumnVarNameInTable="columnAmount_cls" msprop:Generator_ColumnPropNameInRow="Amount_cls" msprop:Generator_ColumnPropNameInTable="Amount_clsColumn" msprop:Generator_UserColumnName="Amount cls" type="xs:string" minOccurs="0" />
+              <xs:element name="No_x0020_Cout" msprop:Generator_ColumnVarNameInTable="columnNo_Cout" msprop:Generator_ColumnPropNameInRow="No_Cout" msprop:Generator_ColumnPropNameInTable="No_CoutColumn" msprop:Generator_UserColumnName="No Cout" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount_x0020_Out" msprop:Generator_ColumnVarNameInTable="columnAmount_Out" msprop:Generator_ColumnPropNameInRow="Amount_Out" msprop:Generator_ColumnPropNameInTable="Amount_OutColumn" msprop:Generator_UserColumnName="Amount Out" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount_x0020_total" msprop:Generator_ColumnVarNameInTable="columnAmount_total" msprop:Generator_ColumnPropNameInRow="Amount_total" msprop:Generator_ColumnPropNameInTable="Amount_totalColumn" msprop:Generator_UserColumnName="Amount total" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount_x0020_PH" msprop:Generator_ColumnVarNameInTable="columnAmount_PH" msprop:Generator_ColumnPropNameInRow="Amount_PH" msprop:Generator_ColumnPropNameInTable="Amount_PHColumn" msprop:Generator_UserColumnName="Amount PH" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount_x0020_Rcvr" msprop:Generator_ColumnVarNameInTable="columnAmount_Rcvr" msprop:Generator_ColumnPropNameInRow="Amount_Rcvr" msprop:Generator_ColumnPropNameInTable="Amount_RcvrColumn" msprop:Generator_UserColumnName="Amount Rcvr" type="xs:string" minOccurs="0" />
+              <xs:element name="Amount_x0020_Wo" msprop:Generator_ColumnVarNameInTable="columnAmount_Wo" msprop:Generator_ColumnPropNameInRow="Amount_Wo" msprop:Generator_ColumnPropNameInTable="Amount_WoColumn" msprop:Generator_UserColumnName="Amount Wo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

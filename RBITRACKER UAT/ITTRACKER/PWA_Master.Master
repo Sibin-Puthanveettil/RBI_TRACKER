@@ -1,0 +1,610 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PWA_Master.master.cs" Inherits="RBIDATATRACK.PWA_Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>RBI FRAUD REPORTING</title>
+    <!-- Custom CSS -->
+    <link href="css/style.min.css" rel="stylesheet" />
+    <link href="css/c3.min.css" rel="stylesheet" />
+    <link href="css/css-chart.css" rel="stylesheet" />
+    <link href="css/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <link href="css/morris.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/summernote-bs4.css"/>
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css"/>
+    <link href="css/select2-bootstrap4.min.css" rel="stylesheet" />
+    <link href="css/sweetalert2.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap-duallistbox.min.css" rel="stylesheet" />
+
+    <!-- Custom js files -->
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/xlsx.core.min.js"></script>
+    <script src="js/xls.core.min.js"></script>
+    <script src="js/raphael.min.js"></script>
+    <script src="js/morris.min.js"></script>
+    <script src="js/css3clock.js"></script>
+    <script src="js/summernote-bs4.min.js"></script>
+    <script src='js/scrollreveal.min.js'></script>
+    <script src="js/jquery.bootstrap-duallistbox.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+            getAccessibility();
+            GetEmpStatus();
+           
+            if ($("[id*=hdEmpCheck]").val() == 0) {
+                setInterval("getPendingCountD();", 1000);
+            } else {
+                setInterval("getPendingCountT();", 1000);
+            }      
+        });
+        function GetEmpStatus() {
+
+            $.ajax({
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                url: "CRFTestResult.aspx/CheckEmployeeDepartment",
+                async: false,
+                data: "{pageVal:'CheckEmployeeDepartment', pageval1 :'" + $("[id*=hdUserId]").val() + "', pageval2 :''}",
+                dataType: "json",
+                success: function (Result) {
+                    Result = Result.d;
+           
+                    if (Result == "0") {
+                        $("[id*=hdEmpCheck]").val(Result);
+       
+                    }
+                    else {
+                        $("[id*=hdEmpCheck]").val("1");
+                    }
+                }
+            });
+        }
+
+        function getPendingCountD() {
+            //alert("Haii am developer");
+            var Data = '';
+            Data = $("[id*=hdBranchId]").val() + 'µ' + $("[id*=hdFirmId]").val() + 'µ' + $("[id*=hdUserId]").val()
+            $.ajax({
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                url: "TechnicalAnalysisTesting.aspx/getBugCount",
+                data: "{pageVal:'GetBugCountD', pageval1:'" + Data + "',pageval2:''}",
+                dataType: "json",
+                success: function (Result) {
+                    Result = Result.d;
+                    document.getElementById("pendCount").innerHTML = Result;
+                }
+            });
+        }
+
+        function getPendingCountT() {
+            //alert("Haii am Tester");
+            var Data = '';
+            Data = $("[id*=hdBranchId]").val() + 'µ' + $("[id*=hdFirmId]").val() + 'µ' + $("[id*=hdUserId]").val()
+            $.ajax({
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                url: "TechnicalAnalysisTesting.aspx/getBugCount",
+                data: "{pageVal:'GetBugCountT', pageval1:'" + Data + "',pageval2:''}",
+                dataType: "json",
+                success: function (Result) {
+                    Result = Result.d;
+                    document.getElementById("pendCount").innerHTML = Result;
+                }
+            });
+        }
+        // for hiding PMO verification and TATesting...
+            function getAccessibility() {
+                    var userId = $("[id*=hdUserId]").val();
+                    $("#pmoverification").hide();
+                    $("#TATesting").hide();
+                    $.ajax({
+                    type: "post",
+                    contentType: "application/json; charset=utf-8",
+                    url: "TechnicalAnalysisTesting.aspx/getAccessibility",
+                    data: "{pageval:'GetAccessibleITTracker', pageval1:'" + userId + "'}",
+                    dataType: "json",
+                    success: function (Result) {
+                    Result = Result.d;
+                    var res = Result.split('¥');
+                    for (var i = 0; i < res.length - 1; i += 1) {
+                    if (res[i].toLowerCase().includes('pmoverification')) {
+                    $("#pmoverification").show();
+                    }
+                    else if (res[i].toLowerCase().includes('technicalanalysistesting')) {
+                    $("#Technical").hide();
+                    $("#TATesting").show();
+                    }
+                    }
+
+                     }
+                    });
+                    }
+        $(document).ready(function () {
+            var input = document.getElementById("txtSearch");
+            input.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    //var chars = {'a':'b','b':'c','c':'a'};
+                    //    var enc;
+                    var str = Encrypt(input.value);
+                    //    enc = str.replace(/[abc]/g, m => chars[m]);
+                    //alert(str);
+                    //alert(Decrypt(str));
+                    event.preventDefault();
+                    window.location = "NoteSearchReport.aspx?searchVal=" + str;
+                    // document.getElementById("myBtn").click();
+                }
+            });
+        });
+
+        //$(".tabledtl tr").click(function () {
+        //    window.location = "LoanAvailment.aspx";
+        //});
+        function Encrypt(value) {
+            var result = "";
+            for (i = 0; i < value.length; i++) {
+                if (i < value.length - 1) {
+                    result += value.charCodeAt(i) + 10;
+                    result += "-";
+                }
+                else {
+                    result += value.charCodeAt(i) + 10;
+                }
+            }
+            return result;
+        }
+
+        function Decrypt(value) {
+            var result = "";
+            var array = value.split("-");
+
+            for (i = 0; i < array.length; i++) {
+                result += String.fromCharCode(array[i] - 10);
+            }
+            return result;
+        }
+    </script>
+    <style>
+       .card-body{
+            width:100%;
+        }</style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="digi()">
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+
+    </div>
+
+
+    <div id="main-wrapper">
+
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="index.aspx">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="files/img/logo_small.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="files/img/logo_small.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="files/img/logo_name.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="files/img/logo_name.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24" style="color: #7460ee;"></i></a></li>
+                        <!-- ============================================================== -->
+                        <!-- mega menu -->
+                        <!-- ============================================================== -->
+                        <%--<li class="nav-item dropdown mega-dropdown">
+                            
+                            <div class="dropdown-menu animated bounceInDown">
+                                <div class="mega-dropdown-menu row">
+                                    <div class="col-lg-3 col-xlg-2 m-b-30">
+                                        
+                                    </div>
+                                    <div class="col-lg-3 m-b-30">
+                                        
+                                    </div>
+                                    <div class="col-lg-3  m-b-30">                                      
+                                        
+                                    </div>
+                                    <div class="col-lg-3 col-xlg-4 m-b-30">
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </li>--%>
+                        <!-- ============================================================== -->
+                        <!-- End mega menu -->
+                        <!-- ============================================================== -->
+                        <div class="nav-item search-box">
+                            <a class="nav-link waves-effect waves-dark " href="javascript:void(0)" style="color: #7460ee; font-weight: 700; font-size: 1.125rem">Search  <i class="fa fa-search font-18" style="color: #7460ee;"></i></a>
+                            <%--<form class="app-search position-absolute">--%>
+                            <div class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter" id="txtSearch">
+                                <a class="srh-btn"><i class="ti-close"></i></a>
+                            </div>
+                            <%--</form>--%>
+                        </div>
+
+                    </ul>
+                    <ul class="navbar-nav float-left" id="roundMenu">
+                        <li>
+                            <ul class="nav-dash">
+                                <%--<li>
+<a  href="RequestNote.aspx" data-toggle="tooltip" title="New Note" class="bg-request active animation-fadeIn">
+<i class="fa fa-plus"></i>
+</a>
+</li>--%>
+                                <li>
+                                    <a href="IncidentEntry.aspx" data-toggle="tooltip" title="New Incident" class="bg-request active animation-fadeIn">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </li>
+                                <%--    <li>
+<a href="Approve2.aspx" data-toggle="tooltip" title="Recommendations/Approval" class="bg-recommend active animation-fadeIn">
+<i class="fa fa-user-plus"></i> <span class="badge badge-yellow"><span class="flashit">8</span></span>
+</a>
+</li>--%>
+                                <%--<li>
+<a href="Approve2.aspx" data-toggle="tooltip" title="Recommendations/Approval" class="bg-approval active animation-fadeIn">
+<i class="fa fa-check"></i> <span class="badge badge-green"><span class="flashit" id="pendCount">0</span></span>
+</a>
+</li>--%>
+                                <li>
+                                    <a href="IncidentVerification.aspx?crfid=1" data-toggle="tooltip" title="Incident Verification" class="bg-approval active animation-fadeIn">
+                                        <i class="fa fa-check"></i><span class="badge badge-green"></span>
+                                    </a>
+                                </li>
+                                <li id="doletter">
+                                    <a href="DO_Letter.aspx?crfid=1" data-toggle="tooltip" title="DO Letter" class="bg-inverse active animation-fadeIn">
+                                        <i class="fa fa-pencil-alt"></i><span class="badge badge-green"></span>
+                                    </a>
+                                </li>
+
+                                <li id="Technical">
+                                    <a href="FMR1.aspx?crfid=1" data-toggle="tooltip" title="FMR 1" class="bg-inverse active animation-fadeIn">
+                                        <i class="fa fa-pencil-alt"></i><span class="badge badge-green"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="CRFHODApprove.aspx?crfid=1" data-toggle="tooltip" title="DO Letter Verification" class="bg-approval active animation-fadeIn">
+                                        <i class="fa fa-check"></i><span class="badge badge-red"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="CRFHODApprove.aspx?crfid=1" data-toggle="tooltip" title="FMR1 Verification" class="bg-approval active animation-fadeIn">
+                                        <i class="fa fa-check"></i><span class="badge badge-red"></span>
+                                    </a>
+                                </li>
+                               <%-- <li id="developerupdation">
+                                    <a href="DeveloperUpdation.aspx?crfid=1" data-toggle="tooltip" title="Developer Updation" class=" bg-orange active animation-fadeIn">
+                                        <i class="fa fa-user"></i><span class="badge badge-green"></span>
+                                    </a>
+                                </li>--%>
+
+                               <%-- <li id="testrequest" runat="server">
+                                    <a href="Testing_Work_assign.aspx" data-toggle="tooltip" title="Test Request Assign" class="bg-maroon active animation-fadeIn">
+                                        <i class="fa fa-times"></i><span class="badge badge-green"></span>
+                                    </a>
+                                </li>--%>
+
+                               <%-- <li id="testresulupdation" runat="server">
+                                    <a href="CRFTestResult.aspx" data-toggle="tooltip" title="Bug Tracking" class=" bg-warning active animation-fadeIn">
+                                        <i class="fa fa-resolving"></i> <span class="badge badge-green"><span class="flashit" id="pendCount">0</span></span>
+                                        <<i class="fa fa-resolving"></i><span class="badge badge-green"></span>
+                                    </a>
+                                </li>--%>
+                               <%-- <li>
+                                    <a href="uatlink.aspx" data-toggle="tooltip" title="User Acceptance" class=" bg-cyan active animation-fadeIn">
+                                        <i class="fa fa-user-secret"></i><span class="badge badge-green"></span>
+                                    </a>
+                                </li>
+                               <%-- <li id="crbrequest" runat="server" visible="false">
+                                    <a href="crbrequest.aspx" data-toggle="tooltip" title="CRB Request" class=" bg-recommend active animation-fadeIn">
+                                        <i class="fa fa-react"></i><span class="badge badge-green"></span>
+                                    </a>
+                                </li>--%>
+                               <%-- <li id="crbApproval" runat="server" visible="false">
+                                    <a href="CRBApproval.aspx" data-toggle="tooltip" title="CRB Approval" class=" bg-danger active animation-fadeIn">
+                                        <i class="fa fa-react"></i><span class="badge badge-green"></span>
+                                    </a>
+                                </li>--%>
+
+                               <%-- <li id="userfeedback">
+                                    <li id="feedbackrequest">
+                                        <a href="CRFFeedbackRequest.aspx" data-toggle="tooltip" title="Feedback Request" class=" bg-green active animation-fadeIn">
+                                            <i class="fa fa-react"></i><span class="badge badge-green"></span>
+                                        </a>
+                                    </li>--%>
+                                    <li>
+                                        <%--<li>
+                                            <a href="userfeedback.aspx" data-toggle="tooltip" title="User feedback" class=" bg-light active animation-fadeIn">
+                                                <i class="fa fa-react"></i><span class="badge badge-green"></span>
+                                            </a>
+                                        </li>--%>
+                                        <li>
+                                            <a href="CRFStatusReport.aspx" data-toggle="tooltip" title="Reports" class="bg-purple active animation-fadeIn">
+                                                <i class="fa fa-list-alt"></i><span class="badge badge-success"></span>
+                                            </a>
+                                        </li>
+
+                                        <%--<li>
+<a href="AdminPage.aspx" data-toggle="tooltip" title="Admin" class="bg-cyan active animation-fadeIn" >
+<i class="fa fa-user"></i> <span class="badge badge-success"></span>
+</a>
+</li>--%>
+
+                                        <li>
+                                            <a href="Index.aspx" data-toggle="tooltip" title="Home" class="bg-maroon active animation-fadeIn">
+                                                <i class="fa fa-home"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+
+                                        </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <%--<ul id="clock">
+<li id="sec" style="transform: rotate(0deg);"></li>
+<li id="hour" style="transform: rotate(437.5deg);"></li>
+<li id="min" style="transform: rotate(210deg);"></li>
+</ul><p class="fa-sm" id="digitt"></p>--%>
+
+
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <%--<img src="https://www.wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">--%>
+                                <asp:Image ID="Image2" runat="server" class="rounded-circle" Width="31" />
+                                <span id="uname2" runat="server" class="head6 text-primary"></span>
+
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+                                <span class="with-arrow"><span class="bg-primary"></span></span>
+                                <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+                                    <div class="">
+                                        <%--<img src="https://www.wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/1.jpg" alt="user" class="img-circle" width="60">--%>
+                                        <asp:Image ID="Image1" runat="server" class="img-circle" Width="60" />
+                                    </div>
+                                    <div class="m-l-10">
+                                        <h4 class="m-b-0" id="uname1" runat="server"></h4>
+                                        <p class=" m-b-0"><%--<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f5839487809bb59298949c99db969a98">[email&#160;protected]</a>--%></p>
+                                    </div>
+                                </div>
+
+                                <a class="dropdown-item" href="logout.aspx" <%--onclick="return open_a_window();"--%>><i class="fa fa-power-off m-r-5 m-l-5"></i>Logout</a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li>
+                            <!-- User Profile-->
+                            <div class="user-profile d-flex no-block dropdown mt-3">
+                                <div class="user-pic">
+                                    <%--<img src="https://www.wrappixel.com/demos/admin-templates/xtreme-admin/assets/images/users/1.jpg" alt="users" class="rounded-circle" width="40" />--%>
+                                    <asp:Image ID="Image3" runat="server" class="rounded-circle" Width="40" />
+                                </div>
+                                <div class="user-content hide-menu ml-2">
+                                    <a href="javascript:void(0)" class="" id="Userdd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <h5 class="mb-0 user-name font-medium" id="uname" runat="server"><%--<span id="uname" runat="server" >--%> <%--</span>--%> <i class="fa fa-angle-down"></i></h5>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Userdd">
+                                        <a class="dropdown-item" href="logout.aspx"><i class="fa fa-power-off mr-1 ml-1"></i>Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End User Profile-->
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Start Menu from Database  -->
+                        <!-- ============================================================== -->
+
+                        <asp:Repeater ID="rpt_mainmenu" runat="server" OnItemDataBound="rpt_mainmenu_ItemDataBound" EnableViewState="True" OnItemCommand="rpt_mainmenu_ItemCommand">
+                            <ItemTemplate>
+
+                                <li class="sidebar-item"><a class="sidebar-link has-arrow  waves-effect waves-light " href="javascript:void(0);" aria-expanded="false"><i class="<%# Eval("icon") %>"></i><span class="hide-menu"><%# Eval("name") %> </span></a>
+
+                                    <ul aria-expanded="false" class="collapse  first-level">
+                                        <asp:Repeater ID="rpt_submenu" runat="server" EnableViewState="True">
+                                            <ItemTemplate>
+                                                <li class="sidebar-item">
+                                                    <a href="<%# Eval("URL") %>" class="sidebar-link"><i class="<%# Eval("menu_icon") %>"></i><span class="hide-menu"><%# Eval("name")%> </span></a>
+                                                    <%--<a href="<%# Eval("URL") %>"  class="sidebar-link"><i id="I1" class="<%# Eval("icon") %>" runat="server"></i><span class="hide-menu"><%# Eval("TITLE")%> </span> </a>--%>
+                                                    <%--<ul class="first-child">
+                                                        <asp:Repeater ID="rpt_submenusecond" runat="server" EnableViewState="True">
+                                                            <ItemTemplate>
+                                                                <li class="sidebar-item">
+                                                                    <a href="<%# Eval("URL") %>"  class="sidebar-link"><i class="<%# Eval("icon") %>"></i><span class="hide-menu"><%# Eval("TITLE")%> </span></a>
+                                                                </li>
+                                                            </ItemTemplate>
+                                                        </asp:Repeater>
+                                                    </ul>--%>
+                                                </li>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </ul>
+                                </li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                        <!-- ============================================================== -->
+                        <!-- END Menu from Database  -->
+                        <!-- ============================================================== -->
+                        <li class="sidebar-item"><a class="sidebar-link waves-effect waves-light sidebar-link" href="logout.aspx" aria-expanded="false"><i class="mdi mdi-directions"></i><span class="hide-menu">Log Out</span></a></li>
+
+
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+
+        <div class="page-wrapper">
+            <%--<ul class="multi-steps">
+    <li class="li-bar">Start</li>
+    <li class="li-bar">First Step</li>
+    <li class="li-bar is-active">Middle Stage</li>
+    <li class="li-bar">Finish</li>
+  </ul>--%>
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+           <br />
+             <br />
+             <br />
+            <footer class="footer text-center" >
+                Designed & Developed by Dotnet Wing, IT S/W Manappuram
+                
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <script src="js/app.min.js"></script>
+    <script src="js/app.init.light-sidebar.js"></script>
+    <!-- Theme settings -->
+    <script src="js/app-style-switcher.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="js/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <script src="js/d3.min.js"></script>
+    <script src="js/c3.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/excanvas.min.js"></script>
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.tooltip.min.js"></script>
+    <script src="js/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="js/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="js/dashboard2.js"></script>
+    <script src="js/echarts/echarts-en.min.js"></script>
+    <script src="js/select2.full.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/select2.init.js"></script>
+    <input id="hdUserId" type="hidden" runat="server" />
+    <input id="hdBranchId" type="hidden" runat="server" />
+    <input id="hdFirmId" type="hidden" runat="server" />
+    <input id="hdEmpCheck" type="hidden" runat="server" />
+</body>
+</html>

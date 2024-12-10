@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+</head>
+ <script language="javascript" type="text/javascript" for="window" event="onload">
+return window_onload()
+</script>
+ <script type="text/javascript">
+     function window_onload() {
+         //closeWindows();
+         quitBox('quit');
+     }
+
+
+         function open_a_window()
+{
+             window.open("https://browserstrangeness.bitbucket.io/window_to_close.htm");
+
+         return false;
+      }
+
+    function quitBox(cmd) {
+        if (cmd == 'quit') {
+            open(location, '_self').close();
+        }
+        return false;
+    }
+
+    function closeWindows() {
+         var browserName = navigator.appName;
+         var browserVer = parseInt(navigator.appVersion);
+         //alert(browserName + " : "+browserVer);
+
+         //document.getElementById("flashContent").innerHTML = "<br>&nbsp;<font face='Arial' color='blue' size='2'><b> You have been logged out of the Game. Please Close Your Browser Window.</b></font>";
+
+         if(browserName == "Microsoft Internet Explorer"){
+             var ie7 = (document.all && !window.opera && window.XMLHttpRequest) ? true : false;  
+             if (ie7)
+             {  
+               //This method is required to close a window without any prompt for IE7 & greater versions.
+               window.open('','_parent','');
+               window.close();
+             }
+            else
+             {
+               //This method is required to close a window without any prompt for IE6
+               this.focus();
+               self.opener = this;
+               self.close();
+             }
+        }else{  
+            //For NON-IE Browsers except Firefox which doesnt support Auto Close
+            try{
+                this.focus();
+                self.opener = this;
+                self.close();
+            }
+            catch(e){
+
+            }
+
+            try{
+                window.open('', '_self', '');
+                netscape.security.PrivilegeManager.enablePrivilege('UniversalBrowserWrite');
+                window.close();
+            }
+            catch(e){
+
+            }
+        }
+    }
+</script>
+<body>
+    <input type="button" onclick="return open_a_window();" value="Open New Window/Tab" />
+</body>
+</html>

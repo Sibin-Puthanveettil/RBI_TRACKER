@@ -1,0 +1,1049 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9503AE6E-5030-45DC-A51D-FB81CA4568F7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RBIDATATRACK</RootNamespace>
+    <AssemblyName>RBIDATATRACK</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>true</Use64BitIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.1.3\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GHelper">
+      <HintPath>C:\Users\314706\Desktop\GHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Helper">
+      <HintPath>E:\sonu\To_Publish_UAT\Bin\Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.1\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\314706\Desktop\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R2 2020\Bin45\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessDenied.aspx" />
+    <Content Include="bin\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Common.Logging.Core.dll" />
+    <Content Include="bin\Common.Logging.dll" />
+    <Content Include="bin\EnvDTE.dll" />
+    <Content Include="bin\Helper.dll" />
+    <Content Include="bin\itext.barcodes.dll" />
+    <Content Include="bin\itext.forms.dll" />
+    <Content Include="bin\itext.io.dll" />
+    <Content Include="bin\itext.kernel.dll" />
+    <Content Include="bin\itext.layout.dll" />
+    <Content Include="bin\itext.pdfa.dll" />
+    <Content Include="bin\itext.sign.dll" />
+    <Content Include="bin\itext.styledxmlparser.dll" />
+    <Content Include="bin\itext.svg.dll" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\itextsharp.xmlworker.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.MSXML.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.DataVisualization.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.Design.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.ProcessingObjectModel.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebDesign.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="bin\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.OLE.Interop.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.TextManager.Interop.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\PWA_APP.dll" />
+    <Content Include="bin\PWA_APP.pdb" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.Process.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.DriveInfo.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Thread.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="bin\SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="bin\SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="bin\SqlServerTypes\x86\SqlServerSpatial140.dll" />
+    <Content Include="bin\stdole.dll" />
+    <None Include="Connected Services\CompService\CompService.disco" />
+    <None Include="Connected Services\CompService\configuration91.svcinfo" />
+    <None Include="Connected Services\CompService\configuration.svcinfo" />
+    <None Include="Connected Services\CompService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\jquery.jqGrid\ellipsis-xbl.xml" />
+    <Content Include="Content\jquery.jqGrid\ui.jqgrid.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="css\bootstrap-duallistbox.min.css" />
+    <Content Include="css\demo_page.css" />
+    <Content Include="css\demo_table.css" />
+    <Content Include="css\jquery-ui-1.8.4.custom.css" />
+    <Content Include="css\select2-bootstrap4.min.css" />
+    <Content Include="css\select2.min.css" />
+    <Content Include="css\TableTools.css" />
+    <Content Include="css\teststar.css" />
+    <Content Include="css\textbox.css" />
+    <Content Include="Data_Upload.aspx" />
+    <Content Include="DO_letter.aspx" />
+    <Content Include="DO_VERIFICATION.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="Excel_Reports.aspx" />
+    <Content Include="Existing_Data_Upload.aspx" />
+    <Content Include="FMR1Verify.aspx" />
+    <Content Include="FMR1.aspx" />
+    <Content Include="FMRRDLCREPORT.aspx" />
+    <Content Include="Fmr_Returns.aspx" />
+    <Content Include="Fmr_Returns_view.aspx" />
+    <Content Include="Fraud_Reports.aspx" />
+    <Content Include="Fraud_Report_Rdlc.aspx" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="IncidentEntry.aspx" />
+    <Content Include="IncidentVerification.aspx" />
+    <Content Include="Incident_doc_upload.aspx" />
+    <Content Include="Incident_doc_verify.aspx" />
+    <Content Include="Incident_Remove.aspx" />
+    <Content Include="js\AutoCompleteJS.js" />
+    <Content Include="js\BugReport.js" />
+    <Content Include="js\crbrqst.js" />
+    <Content Include="js\CRFContentEdit.js" />
+    <Content Include="js\CRFReport.js" />
+    <Content Include="js\CRFtracker.js" />
+    <Content Include="js\CTOApprove.js" />
+    <Content Include="js\DailyTrackerReport.js" />
+    <Content Include="js\DOLetter.js" />
+    <Content Include="js\DoLetterVerification.js" />
+    <Content Include="js\excel_reports.js" />
+    <Content Include="js\FixedColumns.js" />
+    <Content Include="js\FMR1Verify.js" />
+    <Content Include="js\FMREntry.js" />
+    <Content Include="js\Fmr_returns_view.js" />
+    <Content Include="js\Fmr_returns.js" />
+    <Content Include="js\IncidentEntry.js" />
+    <Content Include="js\IncidentRemove.js" />
+    <Content Include="js\IncidentVerification.js" />
+    <Content Include="js\Incident_doc_upld.js" />
+    <Content Include="js\Incident_doc_verify.js" />
+    <Content Include="js\jquery.bootstrap-duallistbox.min.js" />
+    <Content Include="js\jquery.dataTables.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\CRBApproval.js" />
+    <Content Include="js\ReportStyle.js" />
+    <Content Include="js\select2.full.min.js" />
+    <Content Include="js\select2.init.js" />
+    <Content Include="js\select2.min.js" />
+    <Content Include="js\TableTools.js" />
+    <Content Include="js\team.js" />
+    <Content Include="js\TechAnalysisTesting.js" />
+    <Content Include="js\TestResult.js" />
+    <Content Include="js\teststar.js" />
+    <Content Include="js\Tracker.js" />
+    <Content Include="js\TrackerTester.js" />
+    <Content Include="js\ExistingData.js" />
+    <Content Include="js\UploadEligible.js" />
+    <Content Include="js\userfeedback.js" />
+    <Content Include="js\CRFFeedbackRequest.js" />
+    <Content Include="js\ZeroClipboard.js" />
+    <Content Include="NotAutorized.aspx" />
+    <Content Include="rbireports.aspx" />
+    <Content Include="Scripts\i18n\grid.locale-ar.js" />
+    <Content Include="Scripts\i18n\grid.locale-bg.js" />
+    <Content Include="Scripts\i18n\grid.locale-bg1251.js" />
+    <Content Include="Scripts\i18n\grid.locale-cat.js" />
+    <Content Include="Scripts\i18n\grid.locale-cn.js" />
+    <Content Include="Scripts\i18n\grid.locale-cs.js" />
+    <Content Include="Scripts\i18n\grid.locale-da.js" />
+    <Content Include="Scripts\i18n\grid.locale-de.js" />
+    <Content Include="Scripts\i18n\grid.locale-dk.js" />
+    <Content Include="Scripts\i18n\grid.locale-el.js" />
+    <Content Include="Scripts\i18n\grid.locale-en.js" />
+    <Content Include="Scripts\i18n\grid.locale-es.js" />
+    <Content Include="Scripts\i18n\grid.locale-fa.js" />
+    <Content Include="Scripts\i18n\grid.locale-fi.js" />
+    <Content Include="Scripts\i18n\grid.locale-fr.js" />
+    <Content Include="Scripts\i18n\grid.locale-gl.js" />
+    <Content Include="Scripts\i18n\grid.locale-he.js" />
+    <Content Include="Scripts\i18n\grid.locale-hr.js" />
+    <Content Include="Scripts\i18n\grid.locale-hr1250.js" />
+    <Content Include="Scripts\i18n\grid.locale-hu.js" />
+    <Content Include="Scripts\i18n\grid.locale-id.js" />
+    <Content Include="Scripts\i18n\grid.locale-is.js" />
+    <Content Include="Scripts\i18n\grid.locale-it.js" />
+    <Content Include="Scripts\i18n\grid.locale-ja.js" />
+    <Content Include="Scripts\i18n\grid.locale-kr.js" />
+    <Content Include="Scripts\i18n\grid.locale-lt.js" />
+    <Content Include="Scripts\i18n\grid.locale-mne.js" />
+    <Content Include="Scripts\i18n\grid.locale-nl.js" />
+    <Content Include="Scripts\i18n\grid.locale-no.js" />
+    <Content Include="Scripts\i18n\grid.locale-pl.js" />
+    <Content Include="Scripts\i18n\grid.locale-pt-br.js" />
+    <Content Include="Scripts\i18n\grid.locale-pt.js" />
+    <Content Include="Scripts\i18n\grid.locale-ro.js" />
+    <Content Include="Scripts\i18n\grid.locale-ru.js" />
+    <Content Include="Scripts\i18n\grid.locale-sk.js" />
+    <Content Include="Scripts\i18n\grid.locale-sr-latin.js" />
+    <Content Include="Scripts\i18n\grid.locale-sr.js" />
+    <Content Include="Scripts\i18n\grid.locale-sv.js" />
+    <Content Include="Scripts\i18n\grid.locale-th.js" />
+    <Content Include="Scripts\i18n\grid.locale-tr.js" />
+    <Content Include="Scripts\i18n\grid.locale-tw.js" />
+    <Content Include="Scripts\i18n\grid.locale-ua.js" />
+    <Content Include="Scripts\i18n\grid.locale-vi.js" />
+    <None Include="Connected Services\CompService\CompService.wsdl" />
+    <None Include="Connected Services\CompService\CompService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CompService\CompService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CompService\CompService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="FraudOutstanding.xsc">
+      <DependentUpon>FraudOutstanding.xsd</DependentUpon>
+    </Content>
+    <Content Include="Email_attachment\FMR - 1 Audit.docx" />
+    <Content Include="Email_attachment\FMR - 1 Legal.docx" />
+    <Content Include="Email_attachment\FMR - 1 RIM.docx" />
+    <Content Include="Email_attachment\FMR - 1 ZM.xlsx" />
+    <Content Include="Email_attachment\Instructions on Compiling Fraud Report-1.PDF" />
+    <None Include="FraudOutstanding.xsd" />
+    <Content Include="FraudOutstanding.xss">
+      <DependentUpon>FraudOutstanding.xsd</DependentUpon>
+    </Content>
+    <Content Include="FraudRDLCReport.xsc">
+      <DependentUpon>FraudRDLCReport.xsd</DependentUpon>
+    </Content>
+    <None Include="FraudRDLCReport.xsd" />
+    <Content Include="FraudRDLCReport.xss">
+      <DependentUpon>FraudRDLCReport.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.0.js" />
+    <Content Include="Scripts\jquery-ui-1.10.0.min.js" />
+    <Content Include="Scripts\jquery.jqGrid.js" />
+    <Content Include="Scripts\jquery.jqGrid.min.js" />
+    <None Include="Connected Services\PurchaseSer\Purchase.wsdl" />
+    <None Include="Connected Services\PurchaseSer\Purchase.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PurchaseSer\Purchase1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PurchaseSer\Purchase2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PWA_Service\PWA_Service.disco" />
+    <None Include="Connected Services\PWA_Service\configuration91.svcinfo" />
+    <None Include="Connected Services\PWA_Service\configuration.svcinfo" />
+    <None Include="Connected Services\PWA_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\PurchaseSer\Purchase.disco" />
+    <None Include="Connected Services\PurchaseSer\configuration91.svcinfo" />
+    <None Include="Connected Services\PurchaseSer\configuration.svcinfo" />
+    <None Include="Connected Services\PurchaseSer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="css\jquery.datetimepicker.css" />
+    <Content Include="css\jquery.datetimepicker.min.css" />
+    <Content Include="css\sweetalert2.min.css" />
+    <Content Include="files\img\Approved-stamp-png.png" />
+    <Content Include="files\img\approved-stamp-water.png" />
+    <Content Include="files\img\approvedwater.png" />
+    <Content Include="files\img\approvewater.png" />
+    <Content Include="files\img\manappuram_logo.png" />
+    <Content Include="files\img\notedlogo.png" />
+    <Content Include="files\img\paperlessBanner.png" />
+    <Content Include="files\img\paperlessBanner1.png" />
+    <Content Include="files\img\redrejectedstamp.jpg" />
+    <Content Include="files\img\rejectedtext.jpg" />
+    <Content Include="files\img\rejectedwater.png" />
+    <Content Include="files\img\rejectwater.png" />
+    <Content Include="files\js\jspdf.debug.js" />
+    <Content Include="files\js\jspdf.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="js\AdminPage.js" />
+    <Content Include="js\aes.js" />
+    <Content Include="js\PMoDiscussion.js" />
+    <Content Include="js\compare.js" />
+    <Content Include="js\CRFApprove.js" />
+    <Content Include="js\develop.js" />
+    <Content Include="js\downloadscript.js" />
+    <Content Include="js\email.js" />
+    <Content Include="js\indexDashBoard.js" />
+    <Content Include="js\jquery.blockUI.js" />
+    <Content Include="js\jquery.datetimepicker.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\PMOVerify.js" />
+    <Content Include="js\Report.js" />
+    <Content Include="js\scrollreveal.min.js" />
+    <Content Include="js\sessionControl.js" />
+    <Content Include="js\sweetalert2.all.min.js" />
+    <Content Include="js\TechAnalysis.js" />
+    <Content Include="js\TestCaseUpdate.js" />
+    <Content Include="js\testing.js" />
+    <Content Include="js\uatlink.js" />
+    <Content Include="octocat.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\PWA_APP.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="closer.htm" />
+    <Content Include="css\accordian.css" />
+    <Content Include="css\bootstrap-switch.min.css" />
+    <Content Include="css\button.css" />
+    <Content Include="css\c3.min.css" />
+    <Content Include="css\css-chart.css" />
+    <Content Include="css\dataTableCSS.css" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="css\icons\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="css\icons\themify-icons\fonts\themify.svg" />
+    <Content Include="css\icons\weather-icons\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="css\jquery-jvectormap-2.0.2.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\main2.css" />
+    <Content Include="css\menustyle.css" />
+    <Content Include="css\morris.css" />
+    <Content Include="css\MultipleUpload.css" />
+    <Content Include="css\New Text Document.txt" />
+    <Content Include="css\piechart2.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style.min.css" />
+    <Content Include="css\summernote-bs4.css" />
+    <Content Include="css\tabControl.css" />
+    <Content Include="css\uploadfile.css" />
+    <Content Include="css\uploadify.css" />
+    <Content Include="files\css\styles.css" />
+    <Content Include="files\img\click_orig.png" />
+    <Content Include="files\img\desktop\slider\bgslide-1.svg" />
+    <Content Include="files\img\favicon-16x16.png" />
+    <Content Include="files\img\logo.png" />
+    <Content Include="files\img\logo_name.png" />
+    <Content Include="files\img\logo_small.png" />
+    <Content Include="files\img\manappuram_50.png" />
+    <Content Include="files\img\svgsprite.svg" />
+    <Content Include="files\js\libs\fclick.js" />
+    <Content Include="files\js\libs\jquery-2.2.2.min.js" />
+    <Content Include="files\js\libs\js.cookie.js" />
+    <Content Include="files\js\libs\modernizr-custom.js" />
+    <Content Include="files\js\libs\parallax.min.js" />
+    <Content Include="files\js\libs\svg-injector.min.js" />
+    <Content Include="files\js\libs\svgfixer.js" />
+    <Content Include="files\js\main.js" />
+    <Content Include="files\js\plugins\lamp.animation.js" />
+    <Content Include="files\js\plugins\swiper.jquery.min.js" />
+    <Content Include="files\js\sea.js" />
+    <Content Include="home.aspx" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\custom-select.png" />
+    <Content Include="img\error-bg.jpg" />
+    <Content Include="img\img5.png" />
+    <Content Include="img\sidebarbg.png" />
+    <Content Include="Index.aspx" />
+    <Content Include="js\angular.min.js" />
+    <Content Include="js\animate.js" />
+    <Content Include="js\app-style-switcher.js" />
+    <Content Include="js\app.init.light-sidebar.js" />
+    <Content Include="js\app.min.js" />
+    <Content Include="js\ApprovalDetails.js" />
+    <Content Include="js\approvependinglist.js" />
+    <Content Include="js\bootstrap-switch.min.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\breakpoints.js" />
+    <Content Include="js\button.js" />
+    <Content Include="js\c3.min.js" />
+    <Content Include="js\chart.js" />
+    <Content Include="js\Chart.min.js" />
+    <Content Include="js\css3clock.js" />
+    <Content Include="js\custom.min.js" />
+    <Content Include="js\d3.min.js" />
+    <Content Include="js\dashboard2.js" />
+    <Content Include="js\echarts\echarts-en.min.js" />
+    <Content Include="js\echarts\pie-doghnut.js" />
+    <Content Include="js\excanvas.min.js" />
+    <Content Include="js\gauge.min.js" />
+    <Content Include="js\head.js" />
+    <Content Include="js\home.js" />
+    <Content Include="js\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="js\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\index.js" />
+    <Content Include="js\jquery-1.10.0.min.js" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="js\jquery-1.12.4.js" />
+    <Content Include="js\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="js\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="js\jquery-latest.js" />
+    <Content Include="js\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.canvasjs.min.js" />
+    <Content Include="js\jquery.flot.js" />
+    <Content Include="js\jquery.flot.tooltip.min.js" />
+    <Content Include="js\jquery.min.1.11.1.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.table2excel.js" />
+    <Content Include="js\jquery.table2excel.min.js" />
+    <Content Include="js\jquery.uploadfile.min.js" />
+    <Content Include="js\jszip.js" />
+    <Content Include="js\libs\fclick.js" />
+    <Content Include="js\libs\jquery-2.2.2.min.js" />
+    <Content Include="js\libs\js.cookie.js" />
+    <Content Include="js\libs\parallax.min.js" />
+    <Content Include="js\libs\svg-injector.min.js" />
+    <Content Include="js\libs\svgfixer.js" />
+    <Content Include="js\main1.js" />
+    <Content Include="js\modernizr-custom.js" />
+    <Content Include="js\morris.min.js" />
+    <Content Include="js\MultipleUpload.js" />
+    <Content Include="js\newfi.js" />
+    <Content Include="js\newfund.js" />
+    <Content Include="js\perfect-scrollbar.jquery.min.js" />
+    <Content Include="js\piechart2.js" />
+    <Content Include="js\plugins\lamp.animation.js" />
+    <Content Include="js\plugins\swiper.jquery.min.js" />
+    <Content Include="js\popper.min.js" />
+    <Content Include="js\raphael.min.js" />
+    <Content Include="js\RequestNote.js" />
+    <Content Include="js\sidebarmenu.js" />
+    <Content Include="js\sparkline.js" />
+    <Content Include="js\summernote-bs4.min.js" />
+    <Content Include="js\UploadFile.js" />
+    <Content Include="js\uploadify-cancel.png" />
+    <Content Include="js\validation.js" />
+    <Content Include="js\waves.js" />
+    <Content Include="js\xls.core.min.js" />
+    <Content Include="js\xlsx.core.min.js" />
+    <Content Include="logincheck.aspx" />
+    <Content Include="logout.aspx" />
+    <Content Include="SessionCheck.aspx" />
+    <Content Include="SessionExpired.aspx" />
+    <Content Include="ShowImage.ashx" />
+    <Content Include="pwaNoteDS.xsc">
+      <DependentUpon>pwaNoteDS.xsd</DependentUpon>
+    </Content>
+    <None Include="Connected Services\PWA_Service\PWA_Service.wsdl" />
+    <None Include="Connected Services\PWA_Service\PWA_Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PWA_Service\PWA_Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PWA_Service\PWA_Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="pwaNoteDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pwaNoteDS1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="pwaNoteDS.xss">
+      <DependentUpon>pwaNoteDS.xsd</DependentUpon>
+    </Content>
+    <Content Include="RDLC_Report\DataNew.xsc">
+      <DependentUpon>DataNew.xsd</DependentUpon>
+    </Content>
+    <None Include="RDLC_Report\DataNew.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataNew.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RDLC_Report\DataNew.xss">
+      <DependentUpon>DataNew.xsd</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web1.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web1.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AESEncrytDecry.cs" />
+    <Compile Include="Chart.cs" />
+    <Compile Include="Connected Services\CompService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PurchaseSer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PWA_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Upload.aspx.cs">
+      <DependentUpon>Data_Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data_Upload.aspx.designer.cs">
+      <DependentUpon>Data_Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DO_letter.aspx.cs">
+      <DependentUpon>DO_letter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DO_letter.aspx.designer.cs">
+      <DependentUpon>DO_letter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DO_VERIFICATION.aspx.cs">
+      <DependentUpon>DO_VERIFICATION.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DO_VERIFICATION.aspx.designer.cs">
+      <DependentUpon>DO_VERIFICATION.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Excel_Reports.aspx.cs">
+      <DependentUpon>Excel_Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Excel_Reports.aspx.designer.cs">
+      <DependentUpon>Excel_Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Existing_Data_Upload.aspx.cs">
+      <DependentUpon>Existing_Data_Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Existing_Data_Upload.aspx.designer.cs">
+      <DependentUpon>Existing_Data_Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FMR1Verify.aspx.cs">
+      <DependentUpon>FMR1Verify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FMR1Verify.aspx.designer.cs">
+      <DependentUpon>FMR1Verify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FMR1.aspx.cs">
+      <DependentUpon>FMR1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FMR1.aspx.designer.cs">
+      <DependentUpon>FMR1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FMRRDLCREPORT.aspx.cs">
+      <DependentUpon>FMRRDLCREPORT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FMRRDLCREPORT.aspx.designer.cs">
+      <DependentUpon>FMRRDLCREPORT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fmr_Returns.aspx.cs">
+      <DependentUpon>Fmr_Returns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fmr_Returns.aspx.designer.cs">
+      <DependentUpon>Fmr_Returns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fmr_Returns_view.aspx.cs">
+      <DependentUpon>Fmr_Returns_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fmr_Returns_view.aspx.designer.cs">
+      <DependentUpon>Fmr_Returns_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FraudOutstanding.Designer.cs" />
+    <Compile Include="FraudRDLCReport.Designer.cs" />
+    <Compile Include="Fraud_Reports.aspx.cs">
+      <DependentUpon>Fraud_Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fraud_Reports.aspx.designer.cs">
+      <DependentUpon>Fraud_Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fraud_Report_Rdlc.aspx.cs">
+      <DependentUpon>Fraud_Report_Rdlc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fraud_Report_Rdlc.aspx.designer.cs">
+      <DependentUpon>Fraud_Report_Rdlc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IncidentEntry.aspx.cs">
+      <DependentUpon>IncidentEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IncidentEntry.aspx.designer.cs">
+      <DependentUpon>IncidentEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IncidentVerification.aspx.cs">
+      <DependentUpon>IncidentVerification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IncidentVerification.aspx.designer.cs">
+      <DependentUpon>IncidentVerification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Incident_doc_upload.aspx.cs">
+      <DependentUpon>Incident_doc_upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Incident_doc_upload.aspx.designer.cs">
+      <DependentUpon>Incident_doc_upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Incident_doc_verify.aspx.cs">
+      <DependentUpon>Incident_doc_verify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Incident_doc_verify.aspx.designer.cs">
+      <DependentUpon>Incident_doc_verify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Incident_Remove.aspx.cs">
+      <DependentUpon>Incident_Remove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Incident_Remove.aspx.designer.cs">
+      <DependentUpon>Incident_Remove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logincheck.aspx.cs">
+      <DependentUpon>logincheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logincheck.aspx.designer.cs">
+      <DependentUpon>logincheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NetworkUtils.cs" />
+    <Compile Include="NotAutorized.aspx.cs">
+      <DependentUpon>NotAutorized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotAutorized.aspx.designer.cs">
+      <DependentUpon>NotAutorized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pwaNoteDS1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pwaNoteDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PWA_Master.Master.cs">
+      <DependentUpon>PWA_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PWA_Master.Master.designer.cs">
+      <DependentUpon>PWA_Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="rbireports.aspx.cs">
+      <DependentUpon>rbireports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rbireports.aspx.designer.cs">
+      <DependentUpon>rbireports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RDLC_Report\DataNew.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataNew.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SessionCheck.aspx.cs">
+      <DependentUpon>SessionCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SessionCheck.aspx.designer.cs">
+      <DependentUpon>SessionCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SessionExpired.aspx.cs">
+      <DependentUpon>SessionExpired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SessionExpired.aspx.designer.cs">
+      <DependentUpon>SessionExpired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowImage.ashx.cs">
+      <DependentUpon>ShowImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\CooperBlackRegular.ttf" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="css\icons\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="css\icons\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="css\icons\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="css\icons\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="css\icons\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="css\icons\themify-icons\fonts\themify.eot" />
+    <Content Include="css\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="css\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="css\icons\weather-icons\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="css\icons\weather-icons\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="css\icons\weather-icons\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="css\icons\weather-icons\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="js\xlsx.full.min" />
+    <Content Include="css\fonts\summernote.eot" />
+    <Content Include="css\fonts\summernote.ttf" />
+    <Content Include="css\fonts\summernote.woff" />
+    <Content Include="css\MultipleUpload.scss" />
+    <None Include="packages.config" />
+    <Content Include="PWA_Master.Master" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\de\" />
+    <Folder Include="bin\es\" />
+    <Folder Include="bin\fr\" />
+    <Folder Include="bin\it\" />
+    <Folder Include="bin\ja\" />
+    <Folder Include="bin\ko\" />
+    <Folder Include="bin\pt\" />
+    <Folder Include="bin\ru\" />
+    <Folder Include="bin\zh-CHS\" />
+    <Folder Include="bin\zh-CHT\" />
+    <Folder Include="css\icons\flag-icon-css\flags\" />
+    <Folder Include="css\New folder\" />
+    <Folder Include="js\loan_avai\" />
+    <Folder Include="Telerik\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RdlcNoteApproved.rdlc" />
+    <EmbeddedResource Include="DOReportRDLC.rdlc" />
+    <EmbeddedResource Include="FMRReportRDLC.rdlc" />
+    <EmbeddedResource Include="Frauds_Outstanding.rdlc" />
+    <EmbeddedResource Include="Fraud_ Categorywise.rdlc" />
+    <EmbeddedResource Include="Fraud_Categorywise.rdlc" />
+    <EmbeddedResource Include="Fraud_Perpetratorwise.rdlc" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="rdlcPOform.rdlc" />
+    <EmbeddedResource Include="RDLC_Report\New_Report.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CompService\" />
+    <WCFMetadataStorage Include="Connected Services\PurchaseSer\" />
+    <WCFMetadataStorage Include="Connected Services\PWA_Service\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59916</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:21588/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

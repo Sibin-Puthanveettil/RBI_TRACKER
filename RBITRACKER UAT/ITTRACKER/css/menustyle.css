@@ -1,0 +1,246 @@
+﻿.headbar
+{
+	height:120px;
+	background-Color: #24351b;
+}
+.left-side 
+{
+	background: transparent url(../images/head_ok.gif) repeat-x left top; 
+    width:50%;
+    display:inline-block;
+    height:100%;
+    float:left;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: -1;
+}
+.right-side{
+     background: transparent url(../images/head_ok.gif) repeat-x right top; 
+    width:50%;
+    display:inline-block;
+    height:100%;
+    float:right;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    z-index: -1;
+}
+.head-1
+{
+	position:absolute;
+    top:0px;
+	width :100%;
+}
+.head-2
+{
+	position:absolute;
+    top:70px;
+	width :100%;
+}
+
+.footerbar
+{
+	height:50px;
+	background-Color: #24351b;
+	/*background:url(../images/bottom_ok.gif)  repeat-x;*/
+}
+.subheadbar
+{
+	height:30px;
+	background:url(../images/bottom1.png) repeat-x;
+}
+@font-face {
+ font-family: lokicola;
+ src: url(../images/lokicola.eot) /* EOT file for IE */
+}
+@font-face {
+ font-family: lokicola;
+ src: url(../images/lokicola.ttf) /* TTF file for CSS3 browsers */
+}
+span.a{
+    position:initial;
+    top:0;
+}
+.menuMain
+{
+	position:relative;
+    top: 3em;
+    left: 0;
+    z-index: 300;
+   font-size: 13pt;
+}
+.menu1
+{
+	color: White;
+    left: 8.9em;
+    top: -1em;
+    z-index: 400;
+    font-size: 13pt;
+    background-Color: #24351b;
+    /* background:url(../images/back2.jpg) repeat-x;*/
+    height:26px;
+
+}
+.menu2
+{
+	color: black;
+    left: 8.9em;
+    top: -1em;
+    z-index: 400;
+    font-size: 13pt;
+    background-Color: #6b9d50;
+    /*background:url(../images/30.jpg) repeat-x;*/
+}
+.LogOutBtnImgUp
+{	
+	width: 90px; 
+	height:90px;
+	background-Color: transparent;
+	background-image:url(../images/pink-logoutUp.png);	
+}
+.LogOutBtnImgDown
+{
+	width: 75px; 
+	height:75px;
+	background-Color: transparent;
+	background-image:url(../images/pink-logoutDown.png);	
+}
+.HomeBtnImgUp
+{
+	width: 90px; 
+	height:90px;
+	background-Color: transparent;
+	background-image:url(../images/pink-homeUp.png);	
+}
+.HomeBtnImgDown
+{
+	width: 75px; 
+	height:75px;
+	background-Color: transparent;
+	background-image:url(../images/pink-homeDown.png);	
+}
+.closeBtnDown
+{
+	width: 77px; 
+	height:77px;
+	background-Color: transparent;
+	background-image:url(../images/Close-icon2.png);	
+}
+.closeBtnUp
+{
+	width: 102px; 
+	height:102px;
+	background-Color: transparent;
+	background-image:url(../images/Close-icon1.png);	
+}
+ .round {height: 7em; position: relative}
+  .innerround {margin: 0; position: absolute; font-family: 'Oswald', sans-serif;color: #ffffff;
+   bottom: 35%; left: 20%; right: 30%; width: 3.5em; transform: translate(-50%, -50%)}
+.newstape {
+ background-color: #3BB0D6;
+  color: #fff;
+  height: 400px;
+  overflow: hidden;
+  font-family: 'Oswald', sans-serif;
+}
+.newstape-content {
+  position: relative;
+  padding: 15px;
+}
+.newstape-drag { cursor: ns-resize; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.action-button {
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  }
+.rotate1
+{
+overflow: hidden;
+-webkit-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+-webkit-touch-callout: none; -webkit-user-select: none;  -khtml-user-select: none;  -moz-user-select: none;  -ms-user-select: none;  user-select: none;
+}
+.cn{
+ -moz-box-shadow: 3px 3px 4px #000; 
+ -webkit-box-shadow: 3px 3px 4px #000; 
+ box-shadow: 3px 3px 4px #000; 
+ filter: progid:DXImageTransform.Microsoft.dropShadow (OffX='3', OffY='3', Color='#888888', Positive='true');
+}
+div.thumb { float: left; padding: 1px; width: 100%; height: 100%; }
+div.thumb a { border: 0 solid white; }
+.banner {
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url(../images/pink-logoutUp.png) no-repeat;
+  width: 75px; /* Width of new image */
+  height: 75px; /* Height of new image */
+  padding-left: 75px; /* Equal to width of new image */
+}
+.MyClass123{
+	background: url(../images/pink-logoutUp.png);
+}
+.modalBackground
+    {
+        background-color: Black;
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+    }
+    .modalPopup
+    {
+        background-color: #FFFFFF;
+        width: 300px;
+        border: 3px solid #0DA9D0;
+        border-radius: 12px;
+        padding:0
+      
+    }
+    .modalPopup .header
+    {
+        background-color: #2FBDF1;
+        height: 30px;
+        color: White;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+    .modalPopup .body
+    {
+        min-height: 50px;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .modalPopup .footer
+    {
+        padding: 6px;
+    }
+    .modalPopup .yes, .modalPopup .no
+    {
+        height: 23px;
+        color: White;
+        line-height: 23px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .modalPopup .yes
+    {
+        background-color: #2FBDF1;
+        border: 1px solid #0DA9D0;
+    }
+    .modalPopup .no
+    {
+        background-color: #9F9F9F;
+        border: 1px solid #5C5C5C;
+    }
+    .modalPopup1{background-color: #ffffdd;border-width: 3px;border-style: solid;border-color: Gray;padding: 3px;width: 300px;color: #ffffff;}

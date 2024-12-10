@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PWA_Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.0.0.111/MafilService/PWA_Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.0.0.111/MafilService/PWA_Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.0.0.111/MafilService/PWA_Service.svc?xsd=xsd2" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPWA_Service_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="IPWA_Service_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPWA_Service_PwaSelectData_InputMessage">
+    <wsdl:part name="parameters" element="tns:PwaSelectData" />
+  </wsdl:message>
+  <wsdl:message name="IPWA_Service_PwaSelectData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PwaSelectDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPWA_Service_PwaConfirmData_InputMessage">
+    <wsdl:part name="parameters" element="tns:PwaConfirmData" />
+  </wsdl:message>
+  <wsdl:message name="IPWA_Service_PwaConfirmData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PwaConfirmDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPWA_Service_PwaSelectClob_InputMessage">
+    <wsdl:part name="parameters" element="tns:PwaSelectClob" />
+  </wsdl:message>
+  <wsdl:message name="IPWA_Service_PwaSelectClob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PwaSelectClobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPWA_Service_PwaDocumentUpload_InputMessage">
+    <wsdl:part name="parameters" element="tns:PwaDocumentUpload" />
+  </wsdl:message>
+  <wsdl:message name="IPWA_Service_PwaDocumentUpload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PwaDocumentUploadResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPWA_Service">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPWA_Service/DoWork" message="tns:IPWA_Service_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPWA_Service/DoWorkResponse" message="tns:IPWA_Service_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PwaSelectData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPWA_Service/PwaSelectData" message="tns:IPWA_Service_PwaSelectData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPWA_Service/PwaSelectDataResponse" message="tns:IPWA_Service_PwaSelectData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PwaConfirmData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPWA_Service/PwaConfirmData" message="tns:IPWA_Service_PwaConfirmData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPWA_Service/PwaConfirmDataResponse" message="tns:IPWA_Service_PwaConfirmData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PwaSelectClob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPWA_Service/PwaSelectClob" message="tns:IPWA_Service_PwaSelectClob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPWA_Service/PwaSelectClobResponse" message="tns:IPWA_Service_PwaSelectClob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PwaDocumentUpload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPWA_Service/PwaDocumentUpload" message="tns:IPWA_Service_PwaDocumentUpload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPWA_Service/PwaDocumentUploadResponse" message="tns:IPWA_Service_PwaDocumentUpload_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPWA_Service" type="tns:IPWA_Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/IPWA_Service/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PwaSelectData">
+      <soap:operation soapAction="http://tempuri.org/IPWA_Service/PwaSelectData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PwaConfirmData">
+      <soap:operation soapAction="http://tempuri.org/IPWA_Service/PwaConfirmData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PwaSelectClob">
+      <soap:operation soapAction="http://tempuri.org/IPWA_Service/PwaSelectClob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PwaDocumentUpload">
+      <soap:operation soapAction="http://tempuri.org/IPWA_Service/PwaDocumentUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PWA_Service">
+    <wsdl:port name="BasicHttpBinding_IPWA_Service" binding="tns:BasicHttpBinding_IPWA_Service">
+      <soap:address location="http://10.0.0.111/MafilService/PWA_Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

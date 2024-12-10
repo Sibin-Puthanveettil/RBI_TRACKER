@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a398ac75-d5f8-42c3-af74-a6619fa77d06" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.0.0.111/MafilService/PWA_Service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PWA_Service.disco" MetadataType="Disco" ID="d6178233-7224-4149-8ef2-60dc0b3c048d" SourceId="1" SourceUrl="http://10.0.0.111/MafilService/PWA_Service.svc?disco" />
+    <MetadataFile FileName="PWA_Service.wsdl" MetadataType="Wsdl" ID="143d24d0-b4af-4c62-b507-749579fdd670" SourceId="1" SourceUrl="http://10.0.0.111/MafilService/PWA_Service.svc?wsdl" />
+    <MetadataFile FileName="PWA_Service.xsd" MetadataType="Schema" ID="fe3d8bd3-f1a2-43b7-aa0f-65ba36e8163b" SourceId="1" SourceUrl="http://10.0.0.111/MafilService/PWA_Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="PWA_Service1.xsd" MetadataType="Schema" ID="a7d6a02d-8802-4a6c-be33-7ea4fbce25de" SourceId="1" SourceUrl="http://10.0.0.111/MafilService/PWA_Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="PWA_Service2.xsd" MetadataType="Schema" ID="fc070147-eeba-457c-b24d-d33f9cfb6639" SourceId="1" SourceUrl="http://10.0.0.111/MafilService/PWA_Service.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

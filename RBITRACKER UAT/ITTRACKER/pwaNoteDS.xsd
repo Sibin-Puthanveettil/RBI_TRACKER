@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="pwaNoteDS" targetNamespace="http://tempuri.org/pwaNoteDS.xsd" xmlns:mstns="http://tempuri.org/pwaNoteDS.xsd" xmlns="http://tempuri.org/pwaNoteDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="pwaNoteDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="pwaNoteDS" msprop:Generator_UserDSName="pwaNoteDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NoteApprovers" msprop:Generator_TableClassName="NoteApproversDataTable" msprop:Generator_TableVarName="tableNoteApprovers" msprop:Generator_RowChangedName="NoteApproversRowChanged" msprop:Generator_TablePropName="NoteApprovers" msprop:Generator_RowDeletingName="NoteApproversRowDeleting" msprop:Generator_RowChangingName="NoteApproversRowChanging" msprop:Generator_RowEvHandlerName="NoteApproversRowChangeEventHandler" msprop:Generator_RowDeletedName="NoteApproversRowDeleted" msprop:Generator_RowClassName="NoteApproversRow" msprop:Generator_UserTableName="NoteApprovers" msprop:Generator_RowEvArgName="NoteApproversRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="note_id" msprop:Generator_ColumnVarNameInTable="columnnote_id" msprop:Generator_ColumnPropNameInRow="note_id" msprop:Generator_ColumnPropNameInTable="note_idColumn" msprop:Generator_UserColumnName="note_id" type="xs:string" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:string" minOccurs="0" />
+              <xs:element name="user_name" msprop:Generator_ColumnVarNameInTable="columnuser_name" msprop:Generator_ColumnPropNameInRow="user_name" msprop:Generator_ColumnPropNameInTable="user_nameColumn" msprop:Generator_UserColumnName="user_name" type="xs:string" minOccurs="0" />
+              <xs:element name="updated_date" msprop:Generator_ColumnVarNameInTable="columnupdated_date" msprop:Generator_ColumnPropNameInRow="updated_date" msprop:Generator_ColumnPropNameInTable="updated_dateColumn" msprop:Generator_UserColumnName="updated_date" type="xs:string" minOccurs="0" />
+              <xs:element name="remarks" msprop:Generator_ColumnVarNameInTable="columnremarks" msprop:Generator_ColumnPropNameInRow="remarks" msprop:Generator_ColumnPropNameInTable="remarksColumn" msprop:Generator_UserColumnName="remarks" type="xs:string" minOccurs="0" />
+              <xs:element name="designation" msprop:Generator_ColumnVarNameInTable="columndesignation" msprop:Generator_ColumnPropNameInRow="designation" msprop:Generator_ColumnPropNameInTable="designationColumn" msprop:Generator_UserColumnName="designation" type="xs:string" minOccurs="0" />
+              <xs:element name="dep_name" msprop:Generator_ColumnVarNameInTable="columndep_name" msprop:Generator_ColumnPropNameInRow="dep_name" msprop:Generator_ColumnPropNameInTable="dep_nameColumn" msprop:Generator_UserColumnName="dep_name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NoteApproverFooter" msprop:Generator_TableClassName="NoteApproverFooterDataTable" msprop:Generator_TableVarName="tableNoteApproverFooter" msprop:Generator_TablePropName="NoteApproverFooter" msprop:Generator_RowDeletingName="NoteApproverFooterRowDeleting" msprop:Generator_RowChangingName="NoteApproverFooterRowChanging" msprop:Generator_RowEvHandlerName="NoteApproverFooterRowChangeEventHandler" msprop:Generator_RowDeletedName="NoteApproverFooterRowDeleted" msprop:Generator_UserTableName="NoteApproverFooter" msprop:Generator_RowChangedName="NoteApproverFooterRowChanged" msprop:Generator_RowEvArgName="NoteApproverFooterRowChangeEvent" msprop:Generator_RowClassName="NoteApproverFooterRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="note_id" msprop:Generator_ColumnVarNameInTable="columnnote_id" msprop:Generator_ColumnPropNameInRow="note_id" msprop:Generator_ColumnPropNameInTable="note_idColumn" msprop:Generator_UserColumnName="note_id" type="xs:string" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:string" minOccurs="0" />
+              <xs:element name="user_name" msprop:Generator_ColumnVarNameInTable="columnuser_name" msprop:Generator_ColumnPropNameInRow="user_name" msprop:Generator_ColumnPropNameInTable="user_nameColumn" msprop:Generator_UserColumnName="user_name" type="xs:string" minOccurs="0" />
+              <xs:element name="updated_date" msprop:Generator_ColumnVarNameInTable="columnupdated_date" msprop:Generator_ColumnPropNameInRow="updated_date" msprop:Generator_ColumnPropNameInTable="updated_dateColumn" msprop:Generator_UserColumnName="updated_date" type="xs:string" minOccurs="0" />
+              <xs:element name="remarks" msprop:Generator_ColumnVarNameInTable="columnremarks" msprop:Generator_ColumnPropNameInRow="remarks" msprop:Generator_ColumnPropNameInTable="remarksColumn" msprop:Generator_UserColumnName="remarks" type="xs:string" minOccurs="0" />
+              <xs:element name="designation" msprop:Generator_ColumnVarNameInTable="columndesignation" msprop:Generator_ColumnPropNameInRow="designation" msprop:Generator_ColumnPropNameInTable="designationColumn" msprop:Generator_UserColumnName="designation" type="xs:string" minOccurs="0" />
+              <xs:element name="dep_name" msprop:Generator_ColumnVarNameInTable="columndep_name" msprop:Generator_ColumnPropNameInRow="dep_name" msprop:Generator_ColumnPropNameInTable="dep_nameColumn" msprop:Generator_UserColumnName="dep_name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NoteApproverHeader" msprop:Generator_TableClassName="NoteApproverHeaderDataTable" msprop:Generator_TableVarName="tableNoteApproverHeader" msprop:Generator_TablePropName="NoteApproverHeader" msprop:Generator_RowDeletingName="NoteApproverHeaderRowDeleting" msprop:Generator_RowChangingName="NoteApproverHeaderRowChanging" msprop:Generator_RowEvHandlerName="NoteApproverHeaderRowChangeEventHandler" msprop:Generator_RowDeletedName="NoteApproverHeaderRowDeleted" msprop:Generator_UserTableName="NoteApproverHeader" msprop:Generator_RowChangedName="NoteApproverHeaderRowChanged" msprop:Generator_RowEvArgName="NoteApproverHeaderRowChangeEvent" msprop:Generator_RowClassName="NoteApproverHeaderRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="note_id" msprop:Generator_ColumnVarNameInTable="columnnote_id" msprop:Generator_ColumnPropNameInRow="note_id" msprop:Generator_ColumnPropNameInTable="note_idColumn" msprop:Generator_UserColumnName="note_id" type="xs:string" minOccurs="0" />
+              <xs:element name="subject" msdata:Caption="status" msprop:Generator_ColumnVarNameInTable="columnsubject" msprop:Generator_ColumnPropNameInRow="subject" msprop:Generator_ColumnPropNameInTable="subjectColumn" msprop:Generator_UserColumnName="subject" type="xs:string" minOccurs="0" />
+              <xs:element name="creater_name" msdata:Caption="user_name" msprop:Generator_ColumnVarNameInTable="columncreater_name" msprop:Generator_ColumnPropNameInRow="creater_name" msprop:Generator_ColumnPropNameInTable="creater_nameColumn" msprop:Generator_UserColumnName="creater_name" type="xs:string" minOccurs="0" />
+              <xs:element name="created_date" msdata:Caption="updated_date" msprop:Generator_ColumnVarNameInTable="columncreated_date" msprop:Generator_ColumnPropNameInRow="created_date" msprop:Generator_ColumnPropNameInTable="created_dateColumn" msprop:Generator_UserColumnName="created_date" type="xs:string" minOccurs="0" />
+              <xs:element name="dep_name" msprop:Generator_ColumnVarNameInTable="columndep_name" msprop:Generator_ColumnPropNameInRow="dep_name" msprop:Generator_ColumnPropNameInTable="dep_nameColumn" msprop:Generator_UserColumnName="dep_name" type="xs:string" minOccurs="0" />
+              <xs:element name="priority" msprop:Generator_ColumnVarNameInTable="columnpriority" msprop:Generator_ColumnPropNameInRow="priority" msprop:Generator_ColumnPropNameInTable="priorityColumn" msprop:Generator_UserColumnName="priority" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
